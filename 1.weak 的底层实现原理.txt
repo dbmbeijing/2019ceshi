@@ -1,0 +1,33 @@
+1.weak 的底层实现原理
+
+2.消息发送机制
+
+3.分类的实现原理
+
+4.MVVM的理解
+
+5.AFNetWorking 源码的解读
+
+6.下载断点
+
+
+
+
+
+
+<key>NSCameraUsageDescription</key>   
+<string>App需要您的同意,才能访问相机</string>   
+       unrecognized selector    
+•      力       被                    “  
+  ”                crash    unrecognized selector   
+• objective-c                   objc_msgSend(reciver, selector)
+•    [person say]       objc_msgSend(person, @selector(say))
+•         (reciever)  isa                                          
+               
+•     +(BOOL)resolveInstanceMethod:(SEL)sel               每    NO           YES    class_addMethod做                      每
+•             NO      - (id)forwardingTargetForSelector:(SEL)aSelector                               selector每     self每   nil                 每                  每
+•             nil         - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector          nil        每               每
+•                       - (void)forwardInvocation:(NSInvocation *)anInvocation         anInvocation                         
+•          - (void)forwardInvocation:(NSInvocation *)anInvocation         - (void)doesNotRecognizeSelector:(SEL)aSelector  每                 crash             每              每
+
+
